@@ -21,6 +21,8 @@
     <!-- owl -->
     <link rel="stylesheet" href="./css/owl.carousel.min.css" />
     <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
+    <!-- 2025填加 dater -->
+    <link rel="stylesheet" href="./css/daterangepicker.css" />
     <!-- style -->
     <link rel="stylesheet" type="text/css" href="./css/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="./css/slick/slick-theme.css" />
@@ -39,13 +41,14 @@
     />
     <link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css" />
 
-    <!-- 2025填加 -->
     <!-- flatpickr -->
     <link rel="stylesheet" href="./css/flatpickr.css" />
-    <link rel="stylesheet" href="./css/seach.css" />
     <!-- IndexLink -->
     <link rel="stylesheet" type="text/css" href="./css/layout_2025.css" />
     <link rel="stylesheet" href="./css/indexlink.css" />
+
+    <!-- 2025填加 搜尋 -->
+    <link rel="stylesheet" href="./css/seach.css" />
   </head>
 
   <body>
@@ -2062,20 +2065,24 @@
         </div>
         <!-- /Banner -->
 
-        <!-- seach 3 -->
+        <!-- Search -->
         <div id="main-search">
-          <div class="container"></div>
           <div class="button-grid">
-            <button class="button button--white">團體旅遊</button>
-            <button class="button button--primary">客製Mini Tour</button>
-            <button class="button button--primary">自由行</button>
-            <button class="button button--primary">國際機票．機+酒</button>
+            <button class="button button--white button-1">團體旅遊</button>
+            <button class="button button--primary primary-w36 button-2">
+              客製Mini Tour
+            </button>
+            <button class="button button--primary primary-w20 button-3">
+              自由行
+            </button>
+            <button class="button button--primary primary-w44 button-4">
+              國際機票．機+酒
+            </button>
           </div>
-          <div class="sass-property-search">
-            <!-- <h2 class="sass-search-title">團體旅遊</h2> -->
-
+          <!-- xl -->
+          <div class="sass-property-search sass-search-sm">
             <div class="sass-search-form-container">
-              <div class="sass-form-group group-15">
+              <div class="sass-form-group dest-1 group-100">
                 <label class="sass-form-label">目的地</label>
                 <select class="sass-form-select">
                   <option value="">不限</option>
@@ -2087,7 +2094,7 @@
                 </select>
               </div>
 
-              <div class="sass-form-group group-30">
+              <div class="sass-form-group area-1">
                 <label class="sass-form-label">地區城市</label>
                 <select class="sass-form-select">
                   <option value="">全選</option>
@@ -2098,85 +2105,57 @@
                 </select>
               </div>
 
-              <div id="search-tool" class="sass-form-group">
+              <div id="search-tool" class="etd-1 sass-form-group">
                 <label class="sass-form-label">出發區間</label>
                 <div class="searchBox-date">
-                  <span class="go-box">
-                    <input
-                      name="flatpickrGo"
-                      type="text"
-                      id="flatpickrGo"
-                      class="flatpickr flatpickr-input f-date"
-                      placeholder="出發日期"
-                      style="width: 100%"
-                    />
-                    <img
-                      src="https://www.artisan.com.tw/images/calendar.svg"
-                      alt=""
-                    />
-                  </span>
-                  <span class="searchBo-d">至</span>
-                  <span class="back-box">
-                    <input
-                      name="flatpickrBack"
-                      type="text"
-                      id="flatpickrBack"
-                      class="flatpickr flatpickr-input f-date"
-                      placeholder="返回日期"
-                      style="width: 100%"
-                    />
-                    <img
-                      src="https://www.artisan.com.tw/images/calendar.svg"
-                      alt=""
-                    />
-                  </span>
+                  <input name="range" id="date-range" />
                 </div>
               </div>
 
-              <div class="sass-form-group">
+              <div id="keyWords" class="sass-form-group key-1">
                 <label class="sass-form-label">關鍵字</label>
                 <input
                   type="text"
-                  id="name"
+                  id="keyWordstext"
                   placeholder="請輸入 行程名稱、郵輪"
                 />
               </div>
 
-              <div class="sass-sm">
-                <div class="d-flex">
+              <div class="sass-form-group checkLabel-1 sass-sm">
+                <div class="checkLabel-box">
                   <div class="checkLabel">
-                    <label class="cr_rcln"
+                    <label class="cr_label"
                       ><input type="checkbox" value="" /><span
                         class="indicator"
                       ></span
-                      ><span>只找成行</span></label
+                      ><span>只找可報名</span></label
                     >
                   </div>
                   <div class="checkLabel">
-                    <label class="cr_rcln"
+                    <label class="cr_label"
                       ><input type="checkbox" value="" /><span
                         class="indicator"
                       ></span
-                      ><span>只找成行</span></label
+                      ><span>只找已成團</span></label
                     >
                   </div>
                 </div>
               </div>
 
-              <div class="sass-form-group">
-                <label class="sass-form-label">&nbsp;</label>
+              <div class="sass-form-group search-1">
+                <label class="sass-form-label sass-hd">&nbsp;</label>
                 <button type="submit" class="sass-search-button">
                   <i class="fas fa-search"></i>
                 </button>
               </div>
             </div>
-            <div class="d-flex sass-xl">
+            <div class="checkLabel-box sass-xl">
               <div class="checkLabel">
                 <label class="cr_rcln"
                   ><input type="checkbox" value="" /><span
                     class="indicator"
                   ></span
-                  ><span>只找成行</span></label
+                  ><span>只找可報名</span></label
                 >
               </div>
               <div class="checkLabel">
@@ -2184,34 +2163,3518 @@
                   ><input type="checkbox" value="" /><span
                     class="indicator"
                   ></span
-                  ><span>只找成行</span></label
+                  ><span>只找已成團</span></label
                 >
               </div>
             </div>
-            <!-- <div class="d-flex">
-              <div class="checkLabel">
-                <label class="cr_rcln"
-                  ><input type="checkbox" value="" /><span
-                    class="indicator"
-                  ></span
-                  ><span>只找成行</span></label
+          </div>
+          <!-- sm -->
+          <div class="container">
+            <div class="accordion-container">
+              <div class="accordion-item">
+                <button
+                  type="button"
+                  class="accordion-button"
+                  aria-expanded="true"
                 >
+                  <span class="accordion-title">團體旅遊</span>
+                  <span class="icon"></span>
+                </button>
+                <div class="accordion-content">
+                  <div class="sass-property-search">
+                    <div class="sass-search-form-container">
+                      <div class="sass-form-group dest-1 group-100">
+                        <label class="sass-form-label">目的地</label>
+                        <select class="sass-form-select">
+                          <option value="">不限</option>
+                          <option value="apartment">中西歐</option>
+                          <option value="house">東歐</option>
+                          <option value="villa">南歐</option>
+                          <option value="commercial">北歐</option>
+                          <option value="land">中東</option>
+                        </select>
+                      </div>
+
+                      <div class="sass-form-group area-1">
+                        <label class="sass-form-label">地區城市</label>
+                        <select class="sass-form-select">
+                          <option value="">全選</option>
+                          <option value="downtown">
+                            荷蘭．比利時．法國．盧森堡
+                          </option>
+                          <option value="suburb">英國．愛爾蘭</option>
+                          <option value="beachfront">瑞士</option>
+                          <option value="countryside">法國</option>
+                        </select>
+                      </div>
+
+                      <div id="search-tool" class="etd-1 sass-form-group">
+                        <label class="sass-form-label">出發區間</label>
+                        <div class="searchBox-date daterangepicker-wrapper">
+                          <input name="range" id="date-range-sm" />
+                        </div>
+                      </div>
+
+                      <div id="keyWords" class="sass-form-group key-1">
+                        <label class="sass-form-label">關鍵字</label>
+                        <input
+                          type="text"
+                          id="keyWordssm"
+                          placeholder="請輸入 行程名稱、郵輪"
+                        />
+                      </div>
+
+                      <div class="sass-form-group checkLabel-1 sass-sm">
+                        <div class="checkLabel-box">
+                          <div class="checkLabel">
+                            <label class="cr_label"
+                              ><input type="checkbox" value="" /><span
+                                class="indicator"
+                              ></span
+                              ><span>只找可報名</span></label
+                            >
+                          </div>
+                          <div class="checkLabel">
+                            <label class="cr_label"
+                              ><input type="checkbox" value="" /><span
+                                class="indicator"
+                              ></span
+                              ><span>只找已成團</span></label
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="sass-form-group search-1">
+                        <label class="sass-form-label sass-hd">&nbsp;</label>
+                        <button
+                          type="submit"
+                          class="sass-search-button sass-wp"
+                        >
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="checkLabel-box sass-xl">
+                      <div class="checkLabel">
+                        <label class="cr_rcln"
+                          ><input type="checkbox" value="" /><span
+                            class="indicator"
+                          ></span
+                          ><span>只找可報名</span></label
+                        >
+                      </div>
+                      <div class="checkLabel">
+                        <label class="cr_rcln"
+                          ><input type="checkbox" value="" /><span
+                            class="indicator"
+                          ></span
+                          ><span>只找已成團</span></label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="checkLabel">
-                <label class="cr_rcln"
-                  ><input type="checkbox" value="" /><span
-                    class="indicator"
-                  ></span
-                  ><span>只找成行</span></label
+            </div>
+          </div>
+
+          <!-- <div class="container">
+            <div class="accordion-container">
+              <div class="accordion-item">
+                <button
+                  type="button"
+                  class="accordion-button"
+                  aria-expanded="true"
                 >
+                  <span class="accordion-title">團體旅遊</span>
+                  <span class="icon"></span>
+                </button>
+                <div class="accordion-content">
+                  <div class="sass-property-search">
+                    <div class="sass-search-form-container">
+                      <div class="sass-form-group dest-1 group-100">
+                        <label class="sass-form-label">目的地</label>
+                        <select class="sass-form-select">
+                          <option value="">不限</option>
+                          <option value="apartment">中西歐</option>
+                          <option value="house">東歐</option>
+                          <option value="villa">南歐</option>
+                          <option value="commercial">北歐</option>
+                          <option value="land">中東</option>
+                        </select>
+                      </div>
+
+                      <div class="sass-form-group area-1">
+                        <label class="sass-form-label">地區城市</label>
+                        <select class="sass-form-select">
+                          <option value="">全選</option>
+                          <option value="downtown">
+                            荷蘭．比利時．法國．盧森堡
+                          </option>
+                          <option value="suburb">英國．愛爾蘭</option>
+                          <option value="beachfront">瑞士</option>
+                          <option value="countryside">法國</option>
+                        </select>
+                      </div>
+
+                      <div id="search-tool-sm" class="etd-1 sass-form-group">
+                        <label class="sass-form-label">出發區間</label>
+                        <div class="searchBox-date">
+                          <input name="range" id="date-range-sm" />
+                        </div>
+                      </div>
+
+                      <div id="keyWords" class="sass-form-group key-1">
+                        <label class="sass-form-label">關鍵字</label>
+                        <input
+                          type="text"
+                          id="keyWords"
+                          placeholder="請輸入 行程名稱、郵輪"
+                        />
+                      </div>
+
+                      <div class="sass-form-group checkLabel-1 sass-sm">
+                        <div class="checkLabel-box">
+                          <div class="checkLabel">
+                            <label class="cr_label"
+                              ><input type="checkbox" value="" /><span
+                                class="indicator"
+                              ></span
+                              ><span>只找可報名</span></label
+                            >
+                          </div>
+                          <div class="checkLabel">
+                            <label class="cr_label"
+                              ><input type="checkbox" value="" /><span
+                                class="indicator"
+                              ></span
+                              ><span>只找已成團</span></label
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="sass-form-group search-1">
+                        <label class="sass-form-label sass-hd">&nbsp;</label>
+                        <button type="submit" class="sass-search-button">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="checkLabel-box sass-xl">
+                      <div class="checkLabel">
+                        <label class="cr_rcln"
+                          ><input type="checkbox" value="" /><span
+                            class="indicator"
+                          ></span
+                          ><span>只找可報名</span></label
+                        >
+                      </div>
+                      <div class="checkLabel">
+                        <label class="cr_rcln"
+                          ><input type="checkbox" value="" /><span
+                            class="indicator"
+                          ></span
+                          ><span>只找已成團</span></label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div> -->
+            </div>
+          </div> -->
+        </div>
+        <!-- /Search -->
+
+        <!-- PopularCountry -->
+        <div id="PopularCountry">
+          <div class="container">
+            <h3 class="main-title"><span>主題旅遊</span></h3>
+            <div class="PopularCountry-tab-hidden">
+              <ul class="tab PopularCountry-tab" data-tab-name="tab1">
+                <li class="tablinka" onmouseover="openCity(event, 'Pcontent0')">
+                  <a href="#Pcontent0">飛吧！玩歐洲</a>
+                </li>
+                <li class="tablinka" onmouseover="openCity(event, 'Pcontent1')">
+                  <a href="#Pcontent1">日本避暑攻略</a>
+                </li>
+                <li class="tablinka" onmouseover="openCity(event, 'Pcontent2')">
+                  <a href="#Pcontent2">極地．遊輪</a>
+                </li>
+                <li class="tablinka" onmouseover="openCity(event, 'Pcontent3')">
+                  <a href="#Pcontent3">世界秘境．首選</a>
+                </li>
+                <li class="tablinka" onmouseover="openCity(event, 'Pcontent4')">
+                  <a href="#Pcontent4">紐西蘭．澳洲</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="PopularCountry-area">
+              <div class="tabcontenta" style="display: block" id="Pcontent0">
+                <div class="owl-carousel owl-theme PopularCountry-owl-carousel">
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/theme_B.aspx?tp=%E4%B8%AD%E7%A7%8B%E9%80%A3%E4%BC%91"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003854/00086181.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map"></span>
+                        <h3>中秋連假 行程全覽</h3>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/theme_B.aspx?tp=%E9%9B%99%E5%8D%81%E9%80%A3%E4%BC%91"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003854/00086657.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map"></span>
+                        <h3>雙十國慶 連休攻略</h3>
+                        <span>◆請3天 連休9天<br />◆指定團體 早鳥優惠中</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=1&no=3"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003864/00065166.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">西歐</span>
+                        <h3>瑞士</h3>
+                        <span
+                          >◆早鳥優惠中<br />◆相約瑞士鐵道旅遊<br />◆一覽阿爾卑斯山風光</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/theme_B.aspx?tp=%E6%8E%A2%E7%B4%A2%E7%B3%BB%E5%88%97"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003862/006347/00074731.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">中西歐</span>
+                        <h3>探索世界 無限精彩</h3>
+                        <span
+                          >◆漫遊瑞士鐵道<br />◆秘境西巴爾幹<br />◆深度北歐之旅<br />◆南美四國全覽<br />◆探索中亞.蒙古國</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/Exhibition.aspx?area_no=6"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003865/00073351.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">北歐</span>
+                        <h3>北歐全覽</h3>
+                        <span
+                          >◆挪威峽灣景緻<br />◆豪華遊輪<br />◆峽灣區飯店</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=1&no=6"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003864/00042595.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">西歐</span>
+                        <h3>德國．瑞士</h3>
+                        <span
+                          >◆早鳥優惠中<br />
+                          ◆獨家小王子飯店 <br />◆山峰、古堡 享受童話假期</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250617000006"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003862/005627/00087915.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">東歐</span>
+                        <h3>克‧斯‧蒙</h3>
+                        <span
+                          >◆鑽石 (松露) 季特別企劃<br />
+                          ◆金秋紅葉<br />
+                          ◆3晚五星、3國家公園</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240828000003"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003864/00042594.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">西歐</span>
+                        <h3>7/22 風馥荷.比.盧10天</h3>
+                        <span
+                          >◆前10名限時狂送小費<br />◆入住五星飯店<br />◆米其林推薦餐<br />◆三大遊船<br
+                        /></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=12&no=163"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003858/00042550.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">非洲</span>
+                        <h3>埃及</h3>
+                        <span
+                          >◆尼羅河五星河輪<br />◆探索吉薩金字塔、埃及博物館、人面獅身</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=5&no=1"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003857/00060389.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">南歐</span>
+                        <h3>義大利</h3>
+                        <span>◆蜜月首選．333專案<br />◆早鳥優惠中</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241126000005"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003857/00071149.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">南歐</span>
+                        <h3>(成團)10/7.8.10<br />西班牙</h3>
+                        <span
+                          >◆前10名送小費～額滿即止<br />◆中段飛機+AVE快速火車<br />◆米其林推薦、百年餐廳、5J人氣TAPAS、香烤乳豬、景觀餐廳、私房餐廳</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=5&no=162"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003857/00042540.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">南歐</span>
+                        <h3>希臘</h3>
+                        <span
+                          >◆愛琴海三島<br />◆雅典衛城<br />◆天空之城邁提歐拉</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=1&no=2"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003864/00065176.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">西歐</span>
+                        <h3>法國</h3>
+                        <span>◆一生必訪聖米歇爾山<br />◆羅浮宮・凡爾賽宮</span>
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20220809000001"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003857/00068864.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">南歐</span>
+                        <h3>9/9 EY 葡萄牙 早鳥優惠</h3>
+                        <span>◆斗羅河谷酒莊品酒<br />◆著名法朵秀饗宴</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20220420000001"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003857/00042539.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">南歐</span>
+                        <h3>9/10.17.24 西葡方舟</h3>
+                        <span
+                          >◆英屬直布羅陀<br />◆昆卡懸屋<br />◆伊比利之旅</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=2&no=22"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003862/005628/00060382.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">東歐</span>
+                        <h3>奧地利 . 捷克</h3>
+                        <span
+                          >◆住哈斯達特湖區+五星飯店<br />◆暢遊古老鹽礦/庫倫洛夫美景</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250109000004"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003864/00077848.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">西歐</span>
+                        <h3>成團 8/2.10/4<br />英倫13天</h3>
+                        <span
+                          >◆10/04～前10名送小費<br />◆7/26&8/2 愛丁堡軍樂節<br />◆北高地<br />◆威爾斯卡地夫<br />◆蘇格蘭愛丁堡<br
+                        /></span>
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230309000001"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003858/00042545.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">中東</span>
+                        <h3>土耳其 雙飛三宮12天</h3>
+                        <span
+                          >◆伊斯坦堡連住3晚五星<br />◆2晚洞穴飯店<br />◆含熱氣球、2段國內段<br />◆百年葡萄酒餐酒館</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tabcontenta" style="display: none" id="Pcontent1">
+                <div class="owl-carousel owl-theme PopularCountry-owl-carousel">
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250213000001"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00068812.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">北海道(滑雪．CLUB MED</span>
+                        <h3>紫色富良野<br />花火節北海道5天</h3>
+                        <span
+                          >◆絕景青池X湖邊花火節<br />◆長榮航空X贈日本網卡<br />◆哈蜜瓜＋螃蟹吃到飽</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250402000004"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00084731.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">東北(奧入瀨溪．弘前城．仙台)</span>
+                        <h3>奧入瀨溪流<br />清涼東北6天</h3>
+                        <span
+                          >◆WARASSE睡魔之家<br />◆長榮航空X贈日本網卡<br />◆十和田湖X最上川遊船</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240503000002"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00073743.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">北陸(名古屋．加賀屋．立山)</span>
+                        <h3>名古屋楓紅5天</h3>
+                        <span
+                          >◆雙層纜車X立山黑部X上高地<br />◆六種交通工具X日本三大溫泉<br />◆贈送金箔冰淇淋</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250327000005"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00081875.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">京阪神(南紀．奈良)</span>
+                        <h3>長榮賞楓關西５天</h3>
+                        <span
+                          >◆空中纜車X天橋立X合掌村<br />◆龍蝦和牛相撲火鍋<br />◆天橋立海鮮風味餐</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241219000003"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00084733.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">九州(福岡．佐賀．熊本．宮崎)</span>
+                        <h3>百選溫泉<br />九州鐵道旅5天</h3>
+                        <span
+                          >◆保證入住肥前屋<br />◆長榮航空X贈日本網卡<br />◆長腳蟹+酒精暢飲</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250325000003"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00083114.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">京阪神(南紀．奈良)</span>
+                        <h3>紅葉關西山陰山陽７天</h3>
+                        <span
+                          >◆足立美術館X天橋立<br />◆壯麗瀨戶內海X紅葉溪庭園<br />◆堀川遊覧船X鳥取沙丘</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240605000001"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00085787.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">東京(富士山．迪士尼．輕井澤)</span>
+                        <h3>小東北賞楓5天</h3>
+                        <span
+                          >◆楓葉谷吊橋X合掌村鐵道<br />◆五色沼X秋紅波波草<br />◆保證三晚溫泉飯店</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250402000002"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00071135.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">京阪神(南紀．奈良)</span>
+                        <h3>穿越京都風華<br />球影城關西5天</h3>
+                        <span
+                          >◆漫步千本鳥居X清水寺<br />◆長榮航空X贈日本網卡<br />◆章魚燒DIYX和服體驗</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tabcontenta" style="display: none" id="Pcontent2">
+                <div class="owl-carousel owl-theme PopularCountry-owl-carousel">
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=56"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003857/00042540.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">歐洲</span>
+                        <h3>地中海‧愛琴海</h3>
+                        <span
+                          >☆ 2025太陽公主精選航程<br />☆ 地中海開航特惠<br />☆
+                          專屬優惠實施中～</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=176"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003858/00068413.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">中東</span>
+                        <h3>東南亞‧杜拜波斯灣</h3>
+                        <span
+                          >☆ MSC x COSTA<br />☆ 卡達．阿曼．阿聯酋<br />☆
+                          入住陽台艙＋專屬優惠！</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=57"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003861/00060391.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">美加</span>
+                        <h3>阿拉斯加‧冰河</h3>
+                        <span
+                          >☆ 市場銷售第一<br />☆ 北↖南↘．特殊延伸<br />☆
+                          專屬優惠實施中～</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=174"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003865/00076098.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">北歐</span>
+                        <h3>北歐‧英國‧愛爾蘭</h3>
+                        <span
+                          >☆ 入住豪華陽台艙<br />☆ 峽灣．冰島．日不落<br />☆
+                          專屬優惠實施中～</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=55"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003863/00042586.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">日韓</span>
+                        <h3>日本‧韓國‧東北亞</h3>
+                        <span
+                          >☆ 限量賞櫻航程<br />☆ 入住陽台艙<br />☆
+                          專屬優惠實施中～</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=58"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003861/00061871.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">南美</span>
+                        <h3>南北極‧中／南美洲</h3>
+                        <span
+                          >☆ 奢遊南極．飛越德瑞克<br />☆ 公主遊輪南美航程<br />☆
+                          復活節島．伊瓜蘇瀑布<br />☆ 2025里約嘉年華<br />☆
+                          專屬優惠實施中～</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=87"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003856/00073143.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">美墨</span>
+                        <h3>美墨加東‧加勒比海</h3>
+                        <span
+                          >☆ 星宇獨家特惠<br />☆ 暢遊美墨四城<br />☆
+                          專屬優惠實施中～</span
+                        >
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=175"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003855/00068803.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">紐澳</span>
+                        <h3>澳洲‧紐西蘭南北島</h3>
+                        <span
+                          >☆ 紐西蘭山水景緻<br />☆ 跨年．塔斯馬尼亞<br />☆
+                          專屬優惠實施中～</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tabcontenta" style="display: none" id="Pcontent3">
+                <div class="owl-carousel owl-theme PopularCountry-owl-carousel">
+                  <div class="item card-h2x">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241004000001"
+                      ><figure>
+                        <div class="bg-cover"></div>
+                        <div class="bg-black"></div>
+                        <img
+                          class="img-bg"
+                          style="
+                            background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003862/006347/00068016.jpg);
+                          "
+                          alt=""
+                        /></figure
+                    ></a>
+                    <div class="mult-link">
+                      <span class="map">蒙古國</span>
+                      <h3>經典 蒙古.西伯利亞.貝加爾湖13天</h3>
+                      <span
+                        >◆特勒吉之星豪華蒙古包<br />◆夜臥西伯利亞大鐵路<br />◆貝加爾湖環湖鐵路及遊船<br />◆蒙古沙漠騎馬<br
+                      /></span>
+                    </div>
+                  </div>
+                  <div class="item card-h2x">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?l=l&tp=%e3%80%90%e6%98%9f%e5%bf%83%e7%9b%b8%e5%8d%b0"
+                      ><figure>
+                        <div class="bg-cover"></div>
+                        <div class="bg-black"></div>
+                        <img
+                          class="img-bg"
+                          style="
+                            background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003860/00062881.jpg);
+                          "
+                          alt=""
+                        /></figure
+                    ></a>
+                    <div class="mult-link">
+                      <span class="map">印尼(雅加達、巴里島、泗水)</span>
+                      <h3>雅加達x巨匠x星宇航空</h3>
+                      <span
+                        >◆星宇航空飛雅加達<br />◆婆羅摩火山日出<br />◆普蘭巴南印度廟<br />◆婆羅佛屠佛塔<br />◆白色火山湖</span
+                      >
+                    </div>
+                  </div>
+                  <div class="item card-h2x">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20231208000004"
+                      ><figure>
+                        <div class="bg-cover"></div>
+                        <div class="bg-black"></div>
+                        <img
+                          class="img-bg"
+                          style="
+                            background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/006346/00068023.jpg);
+                          "
+                          alt=""
+                        /></figure
+                    ></a>
+                    <div class="mult-link">
+                      <span class="map">中亞．蒙古國</span>
+                      <h3>【探索世界】中亞3國經典12天</h3>
+                      <span
+                        >◆哈薩克．吉爾吉斯．烏茲別克<br />◆伊塞克湖遊船、東干聚落、葉碎城<br />◆塔什干、布哈拉、希瓦、撒馬爾罕</span
+                      >
+                    </div>
+                  </div>
+                  <div class="item card-h2x">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230428000001"
+                      ><figure>
+                        <div class="bg-cover"></div>
+                        <div class="bg-black"></div>
+                        <img
+                          class="img-bg"
+                          style="
+                            background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003860/00042569.jpg);
+                          "
+                          alt=""
+                        /></figure
+                    ></a>
+                    <div class="mult-link">
+                      <span class="map">寮國(龍坡邦、永珍)</span>
+                      <h3>探索世界-神秘湄公河泰寮10天</h3>
+                      <span
+                        >◆全程A檔或5星級飯店<br />◆南宋河漂流<br />◆體驗中寮高鐵</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tabcontenta" style="display: none" id="Pcontent4">
+                <div class="owl-carousel owl-theme PopularCountry-owl-carousel">
+                  <div class="item card-h2x">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250410000002"
+                      ><figure>
+                        <div class="bg-cover"></div>
+                        <div class="bg-black"></div>
+                        <img
+                          class="img-bg"
+                          style="
+                            background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003855/00065460.jpg);
+                          "
+                          alt=""
+                        /></figure
+                    ></a>
+                    <div class="mult-link">
+                      <span class="map">紐西蘭</span>
+                      <h3>紐西蘭大城小鎮12天</h3>
+                      <span
+                        >◆皇后鎮連泊3晚◆長段國內線<br />◆蒂卡波◆庫克山公園飯店</span
+                      >
+                    </div>
+                  </div>
+                  <div class="item card-h2x">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20220923000006"
+                      ><figure>
+                        <div class="bg-cover"></div>
+                        <div class="bg-black"></div>
+                        <img
+                          class="img-bg"
+                          style="
+                            background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003855/00061989.jpg);
+                          "
+                          alt=""
+                        /></figure
+                    ></a>
+                    <div class="mult-link">
+                      <span class="map">紐西蘭</span>
+                      <h3>紐航直飛紐西蘭南北島10天</h3>
+                      <span
+                        >◆鐘乳石螢火蟲洞<br />◆皇后鎮2晚<br />◆米佛峽灣遊船</span
+                      >
+                    </div>
+                  </div>
+                  <div class="item card-h2x">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250212000002"
+                      ><figure>
+                        <div class="bg-cover"></div>
+                        <div class="bg-black"></div>
+                        <img
+                          class="img-bg"
+                          style="
+                            background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003855/00042528.jpg);
+                          "
+                          alt=""
+                        /></figure
+                    ></a>
+                    <div class="mult-link">
+                      <span class="map">澳洲．塔斯馬尼亞</span>
+                      <h3>塔斯馬尼亞深度10天</h3>
+                      <span
+                        >◆雙國家公園<br />◆奢華現捕海鮮船<br />◆薩拉曼卡市集</span
+                      >
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20221220000003"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003855/00063545.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">東澳．雙城│三城</span>
+                        <h3>美好東澳三城全覽9天</h3>
+                        <span>◆螢火蟲夜遊◆廚師帽美食<br />◆黃金五星飯店</span>
+                      </div>
+                    </div>
+                    <div class="card-h1x">
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230424000003"
+                        ><figure>
+                          <div class="bg-cover-half"></div>
+                          <div class="bg-black-half"></div>
+                          <img
+                            class="img-bg-half"
+                            style="
+                              background-image: url(https://www.artisan.com.tw/Zupload/003847/003851/003855/00069196.jpg);
+                            "
+                            alt=""
+                          /></figure
+                      ></a>
+                      <div class="mult-link">
+                        <span class="map">紐澳．雙國│大溪地</span>
+                        <h3>紐西蘭澳洲 雙國15天</h3>
+                        <span
+                          >◆南島峽灣冰河<br />◆北島毛利文化<br />◆東澳三城精華</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /PopularCountry -->
+
+        <!-- SpecialEvent -->
+        <div id="Europe">
+          <div class="container">
+            <h3 class="main-title"><span>世界精選推薦</span></h3>
+            <div class="Europe-nav-tab">
+              <span class="Europe-nav-tab-hidden">
+                <ul class="tab Europe-tab" data-tab-name="tab6">
+                  <li class="tablinkse"><a href="#Europe0">華麗歐洲</a></li>
+                  <li class="tablinkse"><a href="#Europe1">經典行程</a></li>
+                  <li class="tablinkse"><a href="#Europe2">蜜月首選</a></li>
+                  <li class="tablinkse"><a href="#Europe3">圓夢之旅</a></li>
+                  <li class="tablinkse"><a href="#Europe4">深度漫遊</a></li>
+                  <li class="tablinkse"><a href="#Europe5">夯東南亞</a></li>
+                </ul>
+              </span>
+            </div>
+            <div class="Europe-area">
+              <div class="tabContente" id="Europe0">
+                <div class="Europe-hidden">
+                  <div class="Europe-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250208000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250217142525.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">【華麗歐洲】西西里島12日</div>
+                        <div class="remark">
+                          艾特納火山 ｜ 馬泰拉蘑菇村｜ 卡布里島藍洞｜
+                          漫遊羅馬假期
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">08/03.09/14.09/28.10/05.10/12</div>
+                          <div class="price">138900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250210000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250217165407.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">【華麗歐洲】德奧捷10日</div>
+                        <div class="remark">
+                          國王湖｜絕美鹽湖小鎮｜ 羅騰堡｜庫倫諾夫
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/15.07/29.08/05.08/12.08/19.09/02.09/09.09/23.09/30.10/07.10/14.10/21.11/04.11/11.11/18.11/25.12/02.12/09.12/16.12/23.12/30.01/06.01/13.01/20.01/27.02/03.02/10.02/17.02/24.03/03.03/10.03/17.03/24
+                          </div>
+                          <div class="price">88900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250206000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250217153449.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">【華麗歐洲】漫遊西葡14日</div>
+                        <div class="remark">
+                          經典雙城遊船 ｜ 高第建築巡禮｜ 世界文化遺產｜
+                          西葡風情美饌
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">07/18.09/12.09/26</div>
+                          <div class="price">157900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250211000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250217143401.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">【華麗歐洲】北歐五國14日</div>
+                        <div class="remark">
+                          冰島縮影 ｜ 挪威縮影｜ 挪威雙峽灣｜ 經典雙峽灣遊船｜
+                          雙跨國過夜遊輪
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">07/31.08/28.09/11.09/25</div>
+                          <div class="price">238900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Europe-more">
+                  <a
+                    href="https://www.artisan.com.tw/ClassifyProduct.aspx?l=l&tp=%E8%8F%AF%E9%BA%97%E6%AD%90%E6%B4%B2"
+                    class="Europe-more-btn Europe-btn"
+                    >更多華麗歐洲</a
+                  >
+                </div>
+              </div>
+              <div class="tabContente" id="Europe1">
+                <div class="Europe-hidden">
+                  <div class="Europe-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230112000002"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20230823140828.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          義見鍾情 義大利 卡不里 阿瑪菲海岸 童話蘑菇村13天
+                        </div>
+                        <div class="remark">
+                          紅蝦評鑑餐廳、威尼斯島上飯店、藍洞
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/17.07/31.08/14.08/28.09/11.09/25.09/29.10/05.10/09.10/12.10/19.10/26.11/02.11/06.11/09.11/13.11/16.11/20.11/27.12/04.12/11.12/25.01/01.01/15.01/22.01/29.02/05.02/11.02/12.02/19.03/05.03/08.03/12.03/15.03/19.03/26
+                          </div>
+                          <div class="price">125900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20220815000002"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20210722141132.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">金色夢幻 奧地利．捷克10天</div>
+                        <div class="remark">2晚湖區飯店．4晚五星</div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/17.07/23.08/06.08/07.08/20.10/02.10/11.10/22.12/01.12/03.12/15.01/19.01/26.01/28.02/16.02/25.03/04.03/11.03/18.03/22
+                          </div>
+                          <div class="price">96900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250513000005"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250519113648.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          巴黎盛艷 荷比法10天＊三遊船＊藝術羅浮＊巴黎連泊三晚＊
+                        </div>
+                        <div class="remark">
+                          ◆升等五星飯店◆巴黎三晚◆三遊船◆藝術羅浮
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            11/18.12/11.01/01.01/15.01/27.02/12.02/17
+                          </div>
+                          <div class="price">81900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20220420000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20230308104721.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          方舟領航 英屬直布羅陀西葡13天*中段飛機
+                          *五星方舟*AVE火車*
+                        </div>
+                        <div class="remark">
+                          ◆九晚五星◆雙宮、雙秀◆百年餐廳、景觀餐廳
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            09/10.09/17.09/24.10/21.11/11.11/18.11/25.01/11.01/18.01/25.02/01.02/11.02/11.03/15.03/22.03/29
+                          </div>
+                          <div class="price">165900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Europe-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=2&no=22"
+                    class="Europe-more-btn Europe-btn"
+                    >更多經典行程</a
+                  >
+                </div>
+              </div>
+              <div class="tabContente" id="Europe2">
+                <div class="Europe-hidden">
+                  <div class="Europe-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20220808000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20230323123751.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          義大利 卡不里島 阿瑪菲海岸11天(333專案)
+                        </div>
+                        <div class="remark">早鳥｜90天前前10名優惠3,000</div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/16.08/20.09/10.09/17.09/17.09/24.10/01.10/02.10/03.10/08.10/15.10/29.11/05.11/07.11/12.11/19.11/21.11/26.12/05.01/02.01/16.01/30.02/11.02/12.02/15.03/13
+                          </div>
+                          <div class="price">124900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20231207000007"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240216161036.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          亞德里亞海之島嶼遇見愛~克‧斯‧蒙 13天
+                        </div>
+                        <div class="remark">
+                          雙點進出 ｜雙城牆 ｜３國家公園．３纜車．３跳島
+                          ｜2晚湖區、戀人島、四晚五星
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">08/17.09/07</div>
+                          <div class="price">178900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20181109000003"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20241204171902.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          希臘愛琴海三島 秘境札金索斯 天空之城 米其林一星
+                          全覽13天
+                        </div>
+                        <div class="remark">5星設計旅館NOUS+加贈9G網卡</div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            08/27.09/03.09/10.09/30.10/01.10/06.10/07
+                          </div>
+                          <div class="price">169900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230110000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20230911120407.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          遇見小王子~德瑞10天-少女峰、黃金列車、新天鵝堡、萊茵河遊船
+                        </div>
+                        <div class="remark">早鳥優惠｜五星飯店2晚</div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/30.08/04.09/08.09/15.09/29.10/08.10/13.11/04.11/18.11/20.12/16.12/30.01/06.01/20.02/11.02/19.02/24.03/12.03/24
+                          </div>
+                          <div class="price">124900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Europe-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=5&no=1"
+                    class="Europe-more-btn Europe-btn"
+                    >更多蜜月首選</a
+                  >
+                </div>
+              </div>
+              <div class="tabContente" id="Europe3">
+                <div class="Europe-hidden">
+                  <div class="Europe-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241205000003"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20241224104019.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          醉美羅浮敦 極地雙纜車 史瓦爾巴島 捕蟹賞鯨
+                          熊出沒注意11天
+                        </div>
+                        <div class="remark">
+                          史瓦爾巴島連住3晚、2次出海、越野車之旅
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date"></div>
+                          <div class="price2">來電洽詢</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20220826000002"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20241224104502.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          《印加傳奇之旅》秘魯『沙漠綠洲．馬丘比丘．彩虹山景緻』１３天
+                        </div>
+                        <div class="remark">
+                          早鳥優惠｜全程精選五星、彩虹山、納斯卡線飛
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            11/07.11/22.12/10.01/16.02/17.02/26
+                          </div>
+                          <div class="price">238000</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230131000005"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20231114084504.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          奇寶追夢號 勇闖德瑞克海峽 奢遊經典南極１７天
+                        </div>
+                        <div class="remark">奢遊南極17天</div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            11/24.12/04.01/13.02/14.01/20.01/30.02/19.03/01.03/11
+                          </div>
+                          <div class="price">659000</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240916000002"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20241224104909.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          瑞士鐵道 眾覽群山 周遊列湖 相框秘境 散策漫遊13天
+                        </div>
+                        <div class="remark">
+                          瑞士國鐵券1等艙、8大景觀列線、3纜車、2遊船
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/13.10/11</div>
+                          <div class="price">204900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Europe-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=7&no=58"
+                    class="Europe-more-btn Europe-btn"
+                    >更多圓夢之旅</a
+                  >
+                </div>
+              </div>
+              <div class="tabContente" id="Europe4">
+                <div class="Europe-hidden">
+                  <div class="Europe-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20180205000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240216161127.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          埃及 古文明 雙博物館 紅海尼羅河遊輪10天
+                        </div>
+                        <div class="remark">夜臥火車、五星河輪、金字塔</div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            10/13.10/20.10/27.11/03.11/10.11/17.11/24.12/01.01/12.01/19.01/26.02/02.02/09.02/16.02/23.03/02.03/09.03/23
+                          </div>
+                          <div class="price">109900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20220809000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20221104154142.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">葡萄牙 斗羅河谷 微醺11天</div>
+                        <div class="remark">
+                          四晚五星｜萊羅書局 上斗羅河酒區品酒
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            09/09.09/25.10/30.11/06.11/13.11/27.01/08.01/22.02/12.02/26.03/05.03/12
+                          </div>
+                          <div class="price">113900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241202000005"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20241224105647.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          秘境探索
+                          西巴爾幹全覽四國~波士尼亞．蒙地內哥羅．克羅埃西亞．斯洛文尼亞
+                          15天
+                        </div>
+                        <div class="remark">
+                          一獨家│雙跳島│三國家公園│四獨特│五纜車│六晚五星│七世界遺產
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">10/01.10/08</div>
+                          <div class="price">178900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230829000003"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20231011143352.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          南非『桌山纜車．太陽城皇宮．野生動物探索』１０天
+                        </div>
+                        <div class="remark">
+                          太陽城皇宮連住兩晚｜馬布拉野生動物保護區探索ｘ２
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            09/18.10/09.10/23.11/06.11/20.12/04.12/18
+                          </div>
+                          <div class="price">139900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Europe-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=2&no=28"
+                    class="Europe-more-btn Europe-btn"
+                    >更多深度漫遊</a
+                  >
+                </div>
+              </div>
+              <div class="tabContente" id="Europe5">
+                <div class="Europe-hidden">
+                  <div class="Europe-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230413000001"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240216162932.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          【奢華北越】大使號海上VILLA、柔情下龍灣、山水陸龍灣5天
+                        </div>
+                        <div class="remark">
+                          夜宿五星級海上VILLA、太陽之眼摩天輪
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/18.07/21.07/25.07/28.08/01.08/04.08/08.08/11.08/15.08/18.08/22.08/25.08/29.09/01.09/05.09/08.09/12.09/15.09/19.09/22.09/26.09/29.10/13.10/17.10/20.10/24.10/27.10/31.11/03.11/07.11/10.11/14.11/17.11/21.11/24.11/28
+                          </div>
+                          <div class="price">36500</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230915000004"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240216164944.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          【寮動心弦】寮國全覽、中寮高鐵、四千美島、龍坡邦文化遺產10天
+                        </div>
+                        <div class="remark">
+                          湄公河遊船、南宋河遊船、四千美島
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/20.07/27.08/03.08/10.08/17.08/24.08/31.09/07.09/14.09/21.09/28.10/19.10/26.11/02.11/09.11/16.11/23.11/30
+                          </div>
+                          <div class="price">83900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20231004000002"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240216162656.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          【金吳雙城】大小吳哥窟、古墓奇兵、五星渡假村、美食深度6天
+                        </div>
+                        <div class="remark">
+                          吳哥窟三日券、全程五星級奢華酒店
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/18.07/21.07/25.07/28.08/01.08/04.08/08.08/11.08/15.08/18.08/22.08/25.08/29.09/01.09/05.09/08.09/12.09/15.09/19.09/22.09/26.10/01.10/02.10/03.10/07.10/08.10/09.10/20.10/24.10/27.10/31.11/03.11/07.11/10.11/14.11/17.11/21.11/24.11/28.12/05.12/08.12/12.12/15.12/19.01/09.01/12.01/16.01/19.01/23
+                          </div>
+                          <div class="price">42900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20221213000005"
+                      class="Europe-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240216163231.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          【柔情泗水】東方杜拜汶萊、婆羅摩火山、波羅浮屠佛塔8天
+                        </div>
+                        <div class="remark">
+                          婆羅摩火山、普蘭巴南印度廟、長鼻猴生態
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/15.07/22.07/29.08/05.08/12.08/19.08/26.09/02.09/09.09/16.09/23.09/30.10/07.10/14.10/21.10/28.11/04.11/11.11/18.11/25.12/02.12/09.12/16.12/30
+                          </div>
+                          <div class="price">52900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Europe-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=32&no=224"
+                    class="Europe-more-btn Europe-btn"
+                    >更多夯東南亞</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- /seach 3 -->
+        <div id="Taiwan">
+          <div class="container">
+            <h3 class="main-title"><span>大陸自由行精選</span></h3>
+            <div class="Taiwan-nav-tab">
+              <span class="Taiwan-nav-tab-hidden">
+                <ul class="tab Taiwan-tab" data-tab-name="tab5">
+                  <li class="tablinksb"><a href="#Taiwan0">人氣商品</a></li>
+                  <li class="tablinksb"><a href="#Taiwan1">豪華火車</a></li>
+                  <li class="tablinksb"><a href="#Taiwan2">金秋大賞</a></li>
+                  <li class="tablinksb"><a href="#Taiwan3">世界遺產</a></li>
+                  <li class="tablinksb"><a href="#Taiwan4">草原沙漠</a></li>
+                  <li class="tablinksb"><a href="#Taiwan5">健行登峰</a></li>
+                </ul>
+              </span>
+            </div>
+            <div class="Taiwan-area">
+              <div class="tabContent" id="Taiwan0">
+                <div class="Taiwan-hidden">
+                  <div class="Taiwan-tool">
+                    <a
+                      href="https://www.artisan.com.tw/TripIntroduction_2024.aspx?TripNo=T20250109000003&Date=2025/10/22&type=CA"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250714164154.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          絲路夢享號南疆線胡楊林專列、輪台胡楊、盤龍古道、若羌米蘭11天
+                        </div>
+                        <div class="remark">
+                          10/22 絲路夢享號 x 南疆線胡楊林專列
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">10/22.10/22.10/22</div>
+                          <div class="price">299000</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/TripIntroduction_2024.aspx?TripNo=T20250211000003&Date=2025/07/24&type=CZ"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250115121258.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          玩美北疆喀納斯+禾木、小車獨庫公路中段、巴音布魯克、歌舞宴12天
+                        </div>
+                        <div class="remark">
+                          7/24 北疆環線喀納斯+禾木村、7座商務車體驗獨庫公路中段
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            07/20.07/24.08/04.08/07.08/13.08/18.08/20.09/19
+                          </div>
+                          <div class="price">85900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/TripIntroduction_2024.aspx?TripNo=T20241127000002&amp;Date=2025/09/07&amp;type=CA"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250115121258.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          心動北疆二進喀納斯+宿禾木村+雲霄峰索道、小車獨庫公路中段12天
+                        </div>
+                        <div class="remark">
+                          9/7 金秋北疆 | 兩點進出 | 庫公路中段
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/03.09/07.09/23</div>
+                          <div class="price">99900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?GropNumb=AACCA1250905HLD"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250711105724.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          大東北東蒙~最北人家、呼倫貝爾草原、穿越中俄邊境、鱘味奢華、帝王蟹餐12天
+                        </div>
+                        <div class="remark">
+                          9/5 海拉爾進 哈爾濱出 雙點進出行程最順暢
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/05</div>
+                          <div class="price">69900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Taiwan-more">
+                  <a
+                    href="https://reurl.cc/xp097L"
+                    class="Taiwan-more-btn Taiwan-btn"
+                    >更多人氣商品</a
+                  >
+                </div>
+              </div>
+              <div class="tabContent" id="Taiwan1">
+                <div class="Taiwan-hidden">
+                  <div class="Taiwan-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250109000008"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250116124055.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          絲路夢享號甘青線油菜花專列、船遊青海湖、格爾木察爾汗鹽湖12天
+                        </div>
+                        <div class="remark">
+                          07/18 絲路夢享號 x 甘青線油菜花專列
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">07/18.07/18</div>
+                          <div class="price">259000</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250109000003"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250110094937.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          絲路夢享號南疆線胡楊林專列、輪台胡楊、盤龍古道、若羌米蘭11天
+                        </div>
+                        <div class="remark">
+                          10/22 絲路夢享號 x 南疆線胡楊林專列
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">10/22.10/22.10/22</div>
+                          <div class="price">299000</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240514000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250123110248.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          呼倫貝爾號避暑專列、漠河北極村、深入大興安嶺、穿越呼倫貝爾12天
+                        </div>
+                        <div class="remark">
+                          0822 草原避暑奢華列車 | 全獨立衛浴
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">08/22.08/22.08/22.08/22</div>
+                          <div class="price">219000</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250311000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250319172849.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          星光瀾湄號跨國暖冬專列尊享、雲南傣族西雙版納、神秘寮國龍坡邦10天
+                        </div>
+                        <div class="remark">
+                          12/07 達人帶路 | 滿載60位賓客 | 寮國永珍+西雙版納+昆明
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">12/07.12/07.12/07</div>
+                          <div class="price">210000</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Taiwan-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/Exhibition.aspx?area_no=37"
+                    class="Taiwan-more-btn Taiwan-btn"
+                    >更多中國大陸</a
+                  >
+                </div>
+              </div>
+              <div class="tabContent" id="Taiwan2">
+                <div class="Taiwan-hidden">
+                  <div class="Taiwan-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250218000003"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250410115338.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          最美北疆二進喀納斯宿禾木+雲霄峰、巴音布魯克、小車獨庫公路北段13天
+                        </div>
+                        <div class="remark">
+                          《九月金秋最美北疆》市場唯一當天轉機不過夜中轉航班
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/02.09/05</div>
+                          <div class="price">104900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250410000004"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250418165538.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          東北楓情~本溪關門山、天橋溝5D玻璃橋、桓仁五女山、
+                          伏爾加莊園9天
+                        </div>
+                        <div class="remark">
+                          東北楓情~本溪關門山、天橋溝5D玻璃橋、桓仁五女山、
+                          伏爾加莊園9天
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">10/10.10/11.10/13</div>
+                          <div class="price">51900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250416000003"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250418165756.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          秋戀山東、黃河口紅海灘、五嶽泰山、千年銀杏樹、濟南紅葉谷、琅琊古城8天
+                        </div>
+                        <div class="remark">
+                          秋戀山東、黃河口紅海灘、五嶽泰山、千年銀杏樹、濟南紅葉谷、琅琊古城8天
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">10/31.11/07.11/14</div>
+                          <div class="price">37900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250415000002"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250418161012.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          秋意北疆二進喀納斯+宿禾木村+雲霄峰、伊寧換裝旅拍、城際列車12天
+                        </div>
+                        <div class="remark">
+                          )市場唯一當天轉機不過夜中轉航班+金秋最美北疆
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/23.10/04</div>
+                          <div class="price">93900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Taiwan-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=37&no=35"
+                    class="Taiwan-more-btn Taiwan-btn"
+                    >更多中國大陸</a
+                  >
+                </div>
+              </div>
+              <div class="tabContent" id="Taiwan3">
+                <div class="Taiwan-hidden">
+                  <div class="Taiwan-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240102000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240116114737.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          君臨北京~故宮深度游、古北水鎮清宮服體驗、四季民福烤鴨、沉浸式饗宴5天
+                        </div>
+                        <div class="remark">
+                          故宮皇室咖啡+京式下午茶+五星費爾蒙古北之光酒店
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date"></div>
+                          <div class="price2">來電洽詢</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240315000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240729153635.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          長江三峽上水最新長江叁號武隆天坑+仙女山、民國宴8天
+                        </div>
+                        <div class="remark">
+                          2022新船下水1.6萬噸+保證入住三層以上豪華全觀景陽臺房
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            08/03.08/17.09/07.10/19.11/09.11/16.11/23
+                          </div>
+                          <div class="price">53900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240328000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240703115053.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          精彩山西~千年絕技打鐵花、雲岡石窟、平遙古城、
+                          懸空寺、五台山世遺巡禮、高鐵8天
+                        </div>
+                        <div class="remark">
+                          千年絕技打鐵花、雲岡石窟、平遙古城
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">08/24.08/26.08/31</div>
+                          <div class="price2">來電洽詢</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241121000004"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240116110429.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          安徽江西黃山兩晚、最美宏村、婺源篁嶺、五星西海+皇冠8天
+                        </div>
+                        <div class="remark">
+                          黃山後山升等五星西海酒店+屯溪升等皇冠假日酒店
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            08/23.08/30.09/06.09/13.10/18.10/25.11/01.11/08.11/15.11/22.11/29.12/06.12/13.12/20.12/27
+                          </div>
+                          <div class="price">37900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Taiwan-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/Exhibition.aspx?area_no=37"
+                    class="Taiwan-more-btn Taiwan-btn"
+                    >更多中國大陸</a
+                  >
+                </div>
+              </div>
+              <div class="tabContent" id="Taiwan4">
+                <div class="Taiwan-hidden">
+                  <div class="Taiwan-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241111000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250613154119.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          大東北東蒙~最北人家、呼倫貝爾草原、穿越中俄邊境、鱘味奢華、帝王蟹餐12天
+                        </div>
+                        <div class="remark">
+                          漠河北極村+體驗內蒙古文化+越野車穿越最美卡線
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/05</div>
+                          <div class="price">69900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250319000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250613155022.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          雲上草原沙海共舞～塞外明珠銀川、騰格裏沙漠地球中心烏蘭湖、內蒙草原8天
+                        </div>
+                        <div class="remark">
+                          烏蘭湖無人機航拍、響沙灣、希拉穆仁草原、山林會所鮮羊料理+紅酒
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/11.09/25</div>
+                          <div class="price">40900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250528000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250613155421.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          攝影天堂、金秋木蘭圍場、越野烏蘭布統草原、避暑山莊、金山嶺長城9天
+                        </div>
+                        <div class="remark">
+                          最美金山嶺長城+避暑山莊+烏蘭布統草原
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/13.09/15</div>
+                          <div class="price">48900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250408000003"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250613160934.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          東蒙最北人家、呼倫貝爾草原、穿越中俄邊境、鱘味奢華10天
+                        </div>
+                        <div class="remark">
+                          穿越最美呼倫貝爾草原+漠河北極村+異域風情滿洲里
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">08/07.09/02</div>
+                          <div class="price">59900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Taiwan-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/Exhibition.aspx?area_no=37"
+                    class="Taiwan-more-btn Taiwan-btn"
+                    >更多中國大陸</a
+                  >
+                </div>
+              </div>
+              <div class="tabContent" id="Taiwan5">
+                <div class="Taiwan-hidden">
+                  <div class="Taiwan-tool">
+                    <a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240801000006"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240116114142.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          重慶武隆天坑三橋.統景小三峽遊船.白鶴梁水下博物館8天
+                        </div>
+                        <div class="remark">
+                          國際品牌五星重慶凱賓斯基酒店2晚 全程無購物.無自費
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            08/29.08/31.09/12.10/03.10/10.10/31
+                          </div>
+                          <div class="price">32900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20231129000004"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20241122093820.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          黃山泰斗山上三晚+挑包服務、西海大峽谷地軌、仙境齊雲山8天
+                        </div>
+                        <div class="remark">
+                          黃山山上三晚+挑包服務+西海大峽谷地軌上行
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            08/22.08/29.09/05.09/12.09/19.10/17.10/24
+                          </div>
+                          <div class="price">47900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250430000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20250506101831.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          重慶酉陽桃花源.張家界天門山.鳳凰古城.寶峰湖雙秀８天
+                        </div>
+                        <div class="remark">5A酉陽桃花源+張家界+袁家界</div>
+                        <div class="txt_down_box">
+                          <div class="date">
+                            08/29.09/26.10/17.10/19.10/24.10/31
+                          </div>
+                          <div class="price">36900</div>
+                        </div>
+                      </div></a
+                    ><a
+                      href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241022000001"
+                      class="Taiwan-box"
+                      ><div class="img_box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload16/new_web/20240116113446.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="txt_box">
+                        <div class="title">
+                          香格里拉藏裝旅拍.昆明石林.大理去有風的地方.印象麗江8天
+                        </div>
+                        <div class="remark">
+                          入住國際品牌五星酒店+全程無購物.無自費
+                        </div>
+                        <div class="txt_down_box">
+                          <div class="date">09/21.10/26</div>
+                          <div class="price">51900</div>
+                        </div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+                <div class="Taiwan-more">
+                  <a
+                    href="https://www.artisan.com.tw/exh/Exhibition.aspx?area_no=37"
+                    class="Taiwan-more-btn Taiwan-btn"
+                    >更多中國大陸</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /SpecialEvent -->
 
-        <!-- PopularCountry -->
+        <!-- AsiaSelect -->
+        <div id="AsiaSelect">
+          <div class="container">
+            <h3 class="main-title"><span>日本搶先報</span></h3>
+            <div class="AsiaSelect-nav-tab">
+              <span class="AsiaSelect-nav-tab-hidden">
+                <ul class="tab AsiaSelect-tab simple-tab" data-tab-name="tab2">
+                  <li class="tablinksc"><a href="#Asia0">北海道</a></li>
+                  <li class="tablinksc"><a href="#Asia1">東北</a></li>
+                  <li class="tablinksc"><a href="#Asia2">關東</a></li>
+                  <li class="tablinksc"><a href="#Asia3">北陸</a></li>
+                  <li class="tablinksc"><a href="#Asia4">關西</a></li>
+                  <li class="tablinksc"><a href="#Asia5">九州</a></li>
+                </ul>
+              </span>
+              <div class="AsiaSelect-area">
+                <div class="tabcontentc" style="display: block" id="Asia0">
+                  <div class="AsiaSelect-hidden">
+                    <div class="AsiaSelect-tool">
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00086049.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            三大蟹．湖畔花火節．函館山展望台．小丑漢堡道南5天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250430000008"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00071473.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            船上花火．富良野．青池．哈蜜瓜螃蟹吃到飽．雙溫泉5天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250523000007"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00062933.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>紫色富良野．哈蜜瓜螃蟹吃到飽．夏戀花火5天</p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250213000001"
+                        ></a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="Taiwan-more">
+                    <a
+                      href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=35&no=153"
+                      class="Taiwan-more-btn Taiwan-btn"
+                      >更多北海道</a
+                    >
+                  </div>
+                </div>
+                <div class="tabcontentc" style="display: none" id="Asia1">
+                  <div class="AsiaSelect-hidden">
+                    <div class="AsiaSelect-tool">
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00083233.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            金秋奧入瀨溪．笑EMI列車．青森採蘋果．銀山溫泉7天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250205000001"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00083234.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            金秋奧入瀨溪．森吉山．採果體驗．銀山溫泉．滿喫9天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250123000004"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00084736.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            奧入瀨溪流．睡魔之家．十和田湖+最上川遊船．清涼6天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250402000004"
+                        ></a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="Taiwan-more">
+                    <a
+                      href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=35&no=154"
+                      class="Taiwan-more-btn Taiwan-btn"
+                      >更多東北</a
+                    >
+                  </div>
+                </div>
+                <div class="tabcontentc" style="display: none" id="Asia2">
+                  <div class="AsiaSelect-hidden">
+                    <div class="AsiaSelect-tool">
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00085784.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            橫濱纜車．富士山動物園．海賊船．東京晴空塔．迪士尼5天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250401000002"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00083237.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>登頂富士山．河口湖遊船．逆富士．螃蟹吃到飽5天</p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20210413000003"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00083238.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>季節採果．河馬水陸巴士．皇室輕井澤．螃蟹放題5天</p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241209000003"
+                        ></a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="Taiwan-more">
+                    <a
+                      href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=35&no=155"
+                      class="Taiwan-more-btn Taiwan-btn"
+                      >更多關東</a
+                    >
+                  </div>
+                </div>
+                <div class="tabcontentc" style="display: none" id="Asia3">
+                  <div class="AsiaSelect-hidden">
+                    <div class="AsiaSelect-tool">
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00086807.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            黑部峽谷鐵道．立山黑部．上高地．白川鄉．名古屋小松5天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250418000006"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00072865.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            避暑上高地．翠綠立山黑部．合掌村．榮商圈．名古屋5天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250305000001"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00073639.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            雙層纜車賞楓．立山黑部．秋楓上高地．合掌屋．名古屋５天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240503000002"
+                        ></a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="Taiwan-more">
+                    <a
+                      href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=35&no=157"
+                      class="Taiwan-more-btn Taiwan-btn"
+                      >更多北陸</a
+                    >
+                  </div>
+                </div>
+                <div class="tabcontentc" style="display: none" id="Asia4">
+                  <div class="AsiaSelect-hidden">
+                    <div class="AsiaSelect-tool">
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00071443.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>上高地・天橋立・環球/萬博・名古屋關西７天</p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250108000004"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00073637.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>金魚博物館・保證入住喜來登・嵐山小火車５天</p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250313000003"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00088023.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>奈良小鹿・環球影城・雅緻三都５天</p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250526000002"
+                        ></a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="Taiwan-more">
+                    <a
+                      href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=35&no=156"
+                      class="Taiwan-more-btn Taiwan-btn"
+                      >更多關西</a
+                    >
+                  </div>
+                </div>
+                <div class="tabcontentc" style="display: none" id="Asia5">
+                  <div class="AsiaSelect-hidden">
+                    <div class="AsiaSelect-tool">
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00083692.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            可愛萌熊．湯布院藝術小鎮．和牛吃到飽．柳川扁舟超值5天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250213000005"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00086048.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>夢幻別府．柳川遊船．櫻島活火山．仙嚴園全覽5天</p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240815000010"
+                        ></a>
+                      </figure>
+                      <figure class="AsiaSelect-box">
+                        <img
+                          src="https://www.artisan.com.tw/Zupload/003847/003849/00071442.jpg"
+                          alt=""
+                        />
+                        <figcaption>
+                          <p>
+                            星空豪斯登堡．珍珠九十九島．柳川扁舟．八乙女茶園5天
+                          </p>
+                        </figcaption>
+                        <a
+                          href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230613000001"
+                        ></a>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="Taiwan-more">
+                    <a
+                      href="https://www.artisan.com.tw/exh/ExhMini.aspx?area_no=35&no=158"
+                      class="Taiwan-more-btn Taiwan-btn"
+                      >更多九州</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /AsiaSelect -->
+
+        <!-- Brand -->
+        <div id="Brand">
+          <div class="container">
+            <div class="Brand-tab-hidden">
+              <ul class="tab Brand-tab" data-tab-name="tab3">
+                <li
+                  class="Brand-treasure tablinksd selected"
+                  onmouseover="AutoOpenTab(event, 'Bcontent1','tabContentd','tablinksd','selected')"
+                >
+                  <a href="https://www.luxetravel.com.tw/" target="_blank"
+                    ><b>精緻行程</b>典藏旅遊<i>_精緻行程</i></a
+                  >
+                </li>
+                <li
+                  class="Brand-vision tablinksd"
+                  onmouseover="AutoOpenTab(event, 'Bcontent2','tabContentd','tablinksd','selected')"
+                >
+                  <a
+                    href="https://www.artisan.com.tw/Vision_holiday/"
+                    target="_blank"
+                    ><b>Easy GO</b>新視界假期<i>_Easy GO</i></a
+                  >
+                </li>
+                <li
+                  class="Brand-gtour tablinksd"
+                  onmouseover="AutoOpenTab(event, 'Bcontent3','tabContentd','tablinksd','selected')"
+                >
+                  <a href="https://www.gianttour.com.tw/" target="_blank"
+                    ><b>G. Tour</b>巨大旅遊<i>_G. Tour</i></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="Brand-area">
+              <div class="tabContentd" id="Bcontent1">
+                <div class="Brand-hidden">
+                  <div class="Brand-tool">
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00078006.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p><span>客製MINI TOUR</span>量身訂製 專屬行程</p>
+                      </figcaption>
+                      <a
+                        href="https://www.luxetravel.com.tw/JoinForm_black.aspx"
+                      ></a>
+                    </figure>
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00076148.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p>
+                          <span>法國</span>醉美蔚藍海岸 浪漫璀璨巴黎 南北法15天
+                        </p>
+                      </figcaption>
+                      <a
+                        href="https://www.luxetravel.com.tw/TripIntroduction.aspx?TripNo=T20250123000200"
+                      ></a>
+                    </figure>
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00085023.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p>
+                          <span>日本郵輪 三井海洋富士號</span>豪華船旅 ~
+                          與日本的美麗邂逅
+                        </p>
+                      </figcaption>
+                      <a
+                        href="https://www.mitsuioceancruises.com.tw/Mitsui.html"
+                      ></a>
+                    </figure>
+                  </div>
+                </div>
+                <div class="Brand-more">
+                  <a
+                    href="https://www.luxetravel.com.tw/"
+                    target="_blank"
+                    class="Brand-more-btn treasure-btn"
+                    >更多典藏旅遊行程</a
+                  >
+                </div>
+              </div>
+              <div class="tabContentd" id="Bcontent2">
+                <div class="Brand-hidden">
+                  <div class="Brand-tool">
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00063456.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p><span>古文明</span>番轉土耳其 奇幻大地12天</p>
+                      </figcaption>
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240424000006"
+                      ></a>
+                    </figure>
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00076988.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p>
+                          <span>南歐</span>Te amo 惟愛西班牙 浪漫雙城散策11天
+                        </p>
+                      </figcaption>
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241008000001"
+                      ></a>
+                    </figure>
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00081328.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p>
+                          <span>西歐</span>詠山河
+                          德瑞10天-雪朗峰、萊因河、黃金列車
+                        </p>
+                      </figcaption>
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241220000007"
+                      ></a>
+                    </figure>
+                  </div>
+                </div>
+                <div class="Brand-more">
+                  <a href="#" target="_blank" class="Brand-more-btn vision-btn"
+                    >更多新視界旅遊行程</a
+                  >
+                </div>
+              </div>
+              <div class="tabContentd" id="Bcontent3">
+                <div class="Brand-hidden">
+                  <div class="Brand-tool">
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00063456.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p><span>古文明</span>番轉土耳其 奇幻大地12天</p>
+                      </figcaption>
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240424000006"
+                      ></a>
+                    </figure>
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00076988.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p>
+                          <span>南歐</span>Te amo 惟愛西班牙 浪漫雙城散策11天
+                        </p>
+                      </figcaption>
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241008000001"
+                      ></a>
+                    </figure>
+                    <figure class="Brand-box">
+                      <img
+                        src="https://www.artisan.com.tw/Zupload/003847/003848/00081328.jpg"
+                        alt=""
+                      />
+                      <figcaption>
+                        <p>
+                          <span>西歐</span>詠山河
+                          德瑞10天-雪朗峰、萊因河、黃金列車
+                        </p>
+                      </figcaption>
+                      <a
+                        href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241220000007"
+                      ></a>
+                    </figure>
+                  </div>
+                </div>
+                <div class="Brand-more">
+                  <a
+                    href="https://www.gianttour.com.tw/"
+                    target="_blank"
+                    class="Brand-more-btn gtour-btn"
+                    >更多巨大旅遊行程</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Brand -->
+
+        <!-- RecentlyHot -->
+        <div id="RecentlyHot">
+          <div class="container">
+            <h3 class="main-title">
+              <b>‧好評推薦‧</b><span>口碑熱銷</span><i>好評推薦</i>
+            </h3>
+
+            <div class="owl-carousel owl-theme" id="RecentlyHot-owl-carousel">
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20241230112954-SO.jpg"
+                  alt=""
+                />
+                <figcaption>
+                  <p>
+                    太陽公主遊輪『湛藍地中海～黑山峽灣．水色光影三島』１２天
+                  </p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230901000001"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20241230113303-SO.jpg"
+                  alt=""
+                />
+                <figcaption>
+                  <p>瑞士峰情13天 五大名峰、四大列車、阿萊奇冰河、厄希嫩湖</p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241018000002"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20240808103740-SO.jpg"
+                  alt=""
+                />
+                <figcaption>
+                  <p>
+                    紐西蘭大城小鎮『庫克隱士三皇后．魔戒哈比村．蒂卡波觀星之旅』12天
+                  </p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250410000002"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20250523101210-SO.png"
+                  alt=""
+                />
+                <figcaption>
+                  <p>7/18小英倫9天*暑假專屬～送小費108鎊</p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230818000005"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20241230112239-SO.jpg"
+                  alt=""
+                />
+                <figcaption>
+                  <p>尼泊爾『喜瑪拉雅山的神秘古國』９天（兩段國內線）</p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20160804000001"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20250411090442-SO.png"
+                  alt=""
+                />
+                <figcaption>
+                  <p>(成團) 8/25 巨人堤道 愛爾蘭12天 孤獨星球 推薦</p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20241001000001"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20240418112930-SO.jpg"
+                  alt=""
+                />
+                <figcaption>
+                  <p>夏沐漫遊 星月土耳其、時尚杜拜12天</p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20231024000003"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20241230113557-SO.jpg"
+                  alt=""
+                />
+                <figcaption>
+                  <p>義遊仙境 義大利 阿爾卑斯秘境 多洛米堤 12天</p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20240123000004"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20241230110710-SO.jpg"
+                  alt=""
+                />
+                <figcaption><p>醉心 奧．捷．斯．匈 13天</p></figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20230107000001"
+                ></a>
+              </figure>
+              <figure class="RecentlyHot-box">
+                <img
+                  src="https://www.artisan.com.tw/Zupload16/new_web/20241224101022-SO.jpg"
+                  alt=""
+                />
+                <figcaption>
+                  <p>(成團) 10/29 & 11/12 啟程摩洛哥11天 勇闖撒哈拉</p>
+                </figcaption>
+                <a
+                  href="https://www.artisan.com.tw/ClassifyProduct.aspx?TripNo=T20250320000003"
+                ></a>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <!-- /RecentlyHot -->
+
+        <!-- SpecialOffer -->
+
+        <!-- /SpecialOffer -->
+
+        <!-- IndexLink -->
+        <div id="indexLink">
+          <div class="container">
+            <div
+              class="owl-carousel owl-theme"
+              id="indexLink-owl-carousel"
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <div class="item">
+                <a href="https://www.luxetravel.com.tw/" target="_blank">
+                  <div class="link-box">
+                    <img
+                      src="./images/luxetravel_logo.png"
+                      alt=""
+                      class="item-pc"
+                    />
+                    <figure>
+                      <img
+                        src="./images/luxetravel_logo.png"
+                        alt=""
+                        class="item-mobile"
+                      />
+                      <figcaption>典藏旅遊</figcaption>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+              <div class="item">
+                <a href="#" target="_blank">
+                  <div class="link-box">
+                    <img src="./images/gtour_logo.png" alt="" class="item-pc" />
+                    <figure>
+                      <img
+                        src="./images/gtour_logo.png"
+                        alt=""
+                        class="item-mobile"
+                      />
+                      <figcaption>巨大旅遊</figcaption>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+              <div class="item">
+                <div class="link-box-2">
+                  <a href="https://www.artisan.com.tw/blog/" target="_blank">
+                    <div class="link-d">
+                      <img src="./images/icon-4.png" alt="" class="item-pc-2" />
+                      <p>巨匠部落格</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="link-box-2">
+                  <a
+                    href="https://www.artisan.com.tw/Lecture/Lecture.aspx"
+                    target="_blank"
+                  >
+                    <div class="link-d">
+                      <img src="./images/icon-2.png" alt="" class="item-pc-2" />
+                      <p>旅遊講座</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="link-box-2">
+                  <a
+                    href="https://www.artisan.com.tw/Recruitment/recruitment.aspx"
+                    target="_blank"
+                  >
+                    <div class="link-d">
+                      <img src="./images/icon-1.png" alt="" class="item-pc-2" />
+                      <p>人才招募</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="link-box-2">
+                  <a href="https://www.artisan.com.tw/credit/" target="_blank">
+                    <div class="link-d">
+                      <img src="./images/icon-3.png" alt="" class="item-pc-2" />
+                      <p>信用卡優惠</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /IndexLink -->
+
+        <!--大廣告-->
+        <div id="AD" style="display: none">
+          <div class="AD_mask">
+            <h5 class="AD_close">X</h5>
+            <a
+              href="https://www.artisan.com.tw/2020_events/SummerVacation/"
+              target="_blank"
+            >
+              <img src="Upload/2020vacation.jpg" class="AD_img"
+            /></a>
+          </div>
+        </div>
+        <!-- 大廣告 end-->
+
+        <!-- footer -->
+
+        <footer id="footer">
+          <div class="footer-link">
+            <div class="container">
+              <ul id="bottom-menu">
+                <li>
+                  <a href="https://www.artisan.com.tw/" target="_blank"
+                    >回首頁</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.artisan.com.tw/About.aspx"
+                    target="_blank"
+                    >關於巨匠</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.artisan.com.tw/About_Artisan.aspx"
+                    target="_blank"
+                    >連絡我們</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://rate.bot.com.tw/Pages/Static/UIP003.zh-tw.htm"
+                    target="_blank"
+                    >匯率查詢</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="http://www.cwb.gov.tw/V7/forecast/world/world_aa.htm"
+                    target="_blank"
+                    >天氣查詢</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.artisan.com.tw/leader.aspx?page=1"
+                    target="_blank"
+                    >專業領隊</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.artisan.com.tw/Notes.aspx"
+                    target="_blank"
+                    >報名.機票退票.行李托運規定</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.artisan.com.tw/Credit_card.doc"
+                    >刷卡授權書</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.artisan.com.tw/Travel_Contract.doc"
+                    target="_blank"
+                    >旅遊合約書</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.artisan.com.tw/Passenger.doc"
+                    target="_blank"
+                    >旅客保險基本資料表</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="foot-wrap container">
+            <div class="footer-left">
+              <h4>凱旋旅行社(股份)有限公司<span>(交觀綜字第2133號)</span></h4>
+              <p>
+                <span class="triangle"></span><span class="triangle"></span
+                ><span class="triangle"></span>巨匠旅遊 / 新視界假期 / 典藏旅遊
+              </p>
+              <p>經營業務範圍：綜合旅行社經營業務範圍</p>
+              <p>代表人：項國棟｜聯絡人：劉恪宏</p>
+              <p>法律顧問：信和國際法律事務所 梁堯清律師</p>
+              <p>
+                E-MAIL：<span style="font-size: 11px; font-family: Verdana"
+                  ><a href="mailto:artisantour@artisan.com.tw"
+                    >ARTISANTOUR@ARTISAN.COM.TW</a
+                  ></span
+                >
+              </p>
+              <ul class="footer-social">
+                <li>
+                  <a href="http://line.me/ti/p/%40rgm1660e" target="_blank">
+                    <img
+                      src="https://www.artisan.com.tw/images/20_ficon_line.png"
+                      alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/artisantour/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://www.artisan.com.tw/images/20_ficon_fb.png"
+                      alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/artisan_tour/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://www.artisan.com.tw/images/20_ficon_ig.png"
+                      alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UC0RvsJSeoq2gM_z5gyd6mWA/featured"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://www.artisan.com.tw/images/20_ficon_yt.png"
+                      alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="http://artisan.com.tw/blog" target="_blank">
+                    <img
+                      src="https://www.artisan.com.tw/images/20_new_fblog_2.png"
+                      alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="http://www.artisan.com.tw/podcast/" target="_blank">
+                    <img
+                      src="https://www.artisan.com.tw/images/ficon_podcast.png"
+                      alt=""
+                  /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-line"></div>
+            <div class="footer-right">
+              <div class="contact-box-warp">
+                <div class="contact-box">
+                  <p>
+                    <span class="contact-box-title">台北</span
+                    ><span>TEL</span>:02-2507-5000
+                  </p>
+                  <p>FAX:02-2504-6199</p>
+                </div>
+                <div class="contact-box">
+                  <p>
+                    <span class="contact-box-title">桃園</span
+                    ><span>TEL</span>:03-3321-250
+                  </p>
+                  <p>FAX:03-3321-315</p>
+                </div>
+                <div class="contact-box">
+                  <p>
+                    <span class="contact-box-title">新竹</span
+                    ><span>TEL</span>:03-5283-088
+                  </p>
+                  <p>FAX:03-5283-389</p>
+                </div>
+                <div class="contact-box">
+                  <p>
+                    <span class="contact-box-title">台中</span
+                    ><span>TEL</span>:04-2255-0229
+                  </p>
+                  <p>FAX:04-2255-1169</p>
+                </div>
+                <div class="contact-box">
+                  <p>
+                    <span class="contact-box-title">嘉義</span
+                    ><span>TEL</span>:05-233-5335
+                  </p>
+                  <p>FAX:05-233-5330</p>
+                </div>
+                <div class="contact-box">
+                  <p>
+                    <span class="contact-box-title">台南</span
+                    ><span>TEL</span>:06-222-6627
+                  </p>
+                  <p>FAX:06-222-6731</p>
+                </div>
+                <div class="contact-box">
+                  <p>
+                    <span class="contact-box-title contact-box-titleK"
+                      >高雄</span
+                    ><span>TEL</span>:07-2419-872
+                  </p>
+                  <p>FAX:07-2154-690</p>
+                </div>
+                <div class="contact-box">
+                  <p>
+                    <a href="http://line.me/ti/p/%40rgm1660e" target="_blank">
+                      <img
+                        src="https://www.artisan.com.tw/images/20_QRcode.png"
+                        alt="line QR code"
+                        class="QR-code" /></a
+                    ><span class="QR-txt"
+                      >→點我加入LINE@好友，<br />
+                      不定期享好康優惠!</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
 
         <!-- Crolltop -->
         <div id="gotop" style="display: none">
@@ -2872,34 +6335,34 @@
         <!-- /footer -->
       </div>
 
-      <!-- JQ -->
+      <!-- 1. jQuery 必須最前面 -->
       <script src="./js/jquery-1.12.4.min.js"></script>
-      <!-- menu -->
+
+      <!-- 2. 你的 JS 腳本（非 daterangepicker 相關） -->
       <script type="text/javascript" src="./js/menu.js"></script>
-      <!-- owl -->
       <script src="./js/owl.carousel.min.js"></script>
-      <!-- flatpickr -->
       <script src="./js/flatpickr.js"></script>
-      <!-- 讓picture能在ie執行 -->
       <script src="./js/picturefill.min.js"></script>
-      <!-- tab -->
       <script src="./js/jQuery.easyTabs.js"></script>
       <script src="./js/simpletab.js"></script>
-      <!-- Pushy JS -->
       <script src="./js/pushy.min.js"></script>
-      <!-- js -->
       <script src="./js/index_2020.js"></script>
-      <!-- 彈跳視窗 -->
       <script src="./js/Popup.js"></script>
       <script src="./js/index_2022.js"></script>
-
       <script type="text/javascript" src="./js/main-1.js"></script>
-      <!-- <script src="./css/slick/slick-a11y.js"></script> -->
       <script src="./css/slick/slick.js"></script>
 
+      <!-- 3. Moment.js（daterangepicker 依賴它） -->
       <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+      <!-- 4. daterangepicker 本體 -->
       <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-      <script src="./script2.js"></script>
+
+      <!-- 5. 你的日期初始化腳本（date.js） -->
+      <script src="./js/date.js"></script>
+
+      <!-- 6. 最後其他腳本（如果有需要放在最後） -->
+      <script src="./js/script2.js"></script>
     </form>
   </body>
 </html>
