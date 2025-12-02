@@ -1,3 +1,7 @@
+
+// 讓手機點日期不跳出鍵盤（一定要放最前面）
+$("#date-range, #date-range-sm").attr("readonly", true);
+
 $('#date-range').daterangepicker({
     autoApply: true,
     locale: { format: 'YYYY/MM/DD' }
