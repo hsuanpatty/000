@@ -123,6 +123,16 @@ input[type=checkbox] {
   margin-bottom: 20px;
   position: relative;
 }
+
+  #search-tool {
+        width: 100%;
+        max-width: 1600px; /* 你想設定多少我都能幫你算 */
+        margin: 0 auto;
+    }
+    #search-tool input {
+        width: 100%;
+    }
+    
 .search-tab-label {
   display: block;
   position: absolute;
