@@ -547,15 +547,12 @@ input[type=checkbox] {
 }
 
 @media (max-width: 575.98px) {
-   .sass-search-form-container {
-      grid-template-columns: repeat(3, 1fr);
-   }
    .dest-1 { grid-column: span 3; }
    .area-1 { grid-column: span 3; }
    .etd-1  { grid-column: span 3; }
    .key-1  { grid-column: span 3; }
    .checkLabel-1  { grid-column: span 3; }
-   .search-1  { grid-column: span 1;    width: 100%; }
+   .search-1  { grid-column: span 3;    width: 100%; }
     .sass-property-search {
         width: 100%;
         max-width: 100%;
@@ -565,7 +562,7 @@ input[type=checkbox] {
     }
     .sass-search-form-container {
         display: grid;
-        grid-template-columns: 1fr; /* 單欄 */
+        grid-template-columns: 2fr; /* 單欄 */
         gap: 10px;
     }
     .sass-search-button {
