@@ -11,9 +11,10 @@
   --bs-search-color:#46474a;
   --bs-search-bt:#414751;
   --bs-search-red:#ce2222;
+  --bs-search-red2: rgb(140, 0, 26);
   --background: #ffffff;
   --border: #dfe6e9;
-  --shadow: 0 4px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
   --transition: all 0.3s ease;
 }
 h1,
@@ -234,12 +235,12 @@ input[type=checkbox] {
     margin-right: auto;
 
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     /* gap: 40px; */
 }
 
 .button-grid .button {
-    padding: 12px 24px;
+    padding: 8px 24px;
     font-size: 16px;
     font-weight: 600;
     border: none;
@@ -257,10 +258,11 @@ input[type=checkbox] {
 .button-grid .button--primary {
     font-size: 17px;
     font-weight: 600;
-    background-color: var(--bs-search-bt);
+    background-color: var(--bs-search-red2);
     color: white;
     border-right: 1px solid #ffffff;
     letter-spacing: 0.05rem;
+    white-space:nowrap;
     font-family: Segoe UI, Roboto, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, MicrosoftJhengHeiBoldFix, 微軟正黑體, Microsoft JhengHei;
 
 }
@@ -270,13 +272,23 @@ input[type=checkbox] {
 }
 
 .button-grid .button--white {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 600;
     border-top: 4px solid var(--bs-search-red);
     background-color:white;
     color: var(--bs-search-red);
     letter-spacing: 0.05rem;
+    white-space:nowrap;
     font-family: Segoe UI, Roboto, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, MicrosoftJhengHeiBoldFix, 微軟正黑體, Microsoft JhengHei;
+}
+
+.button-2,
+.button-3,
+.button-4 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
 }
 
 .button-1 {
@@ -311,7 +323,7 @@ input[type=checkbox] {
 
   /* 字體大小修正（正確寫法） */
   .button-grid .button--primary {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .button-grid .button--white {
@@ -337,14 +349,14 @@ input[type=checkbox] {
     }
 
     .button-grid .button--primary {
-      background-color: var(--bs-search-red);
+      background-color: var(--bs-search-red2);
     }
 }
 
 /* Property Search Form */
 .sass-property-search {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 0 8px 8px 8px;
   box-shadow: var(--shadow);
   padding: 30px 30px 15px;
   z-index: 10;
@@ -450,7 +462,7 @@ input[type=checkbox] {
 }
 
 .sass-search-button {
-  background-color: var(--accent);
+  background-color: var(--bs-search-red);
   color: white;
   border: none;
   padding: 13px 10px;
@@ -475,7 +487,7 @@ input[type=checkbox] {
 
 @media (max-width: 1199.98px) { 
   .dest-1 {
-    grid-column: span 1;
+    grid-column: span 2;
     width: 100%;
   }
 
@@ -497,7 +509,7 @@ input[type=checkbox] {
     width: auto;
   }
   .checkLabel-1 {
-    grid-column: span 6;
+    grid-column: span 3;
   }
 
   .sass-search-button {
@@ -510,23 +522,19 @@ input[type=checkbox] {
     width: 100%;
   }
   
-  .sass-hd {
-    display: none;
-  }
-
 }
 
 @media (max-width: 991.98px) { 
-  .checkLabel-1 {
-    grid-column: span 5;
-  }
-
   .sass-property-search {
     padding: 20px 30px;
   }
 }
 
 @media (max-width: 780.98px) {
+  .sass-property-search {
+    border-radius: 0;
+  }
+
   .sass-search-form-container {
       grid-template-columns: repeat(4, 1fr);
    }
@@ -543,6 +551,11 @@ input[type=checkbox] {
   .search-1 {
     grid-column: span 1;
   }
+
+  .sass-hd {
+    display: none;
+  }
+
 
 }
 
@@ -647,7 +660,11 @@ input[type=checkbox] {
 @media (max-width: 767.98px) {
 
   .sass-property-search {
-    padding: 30px;
+    padding: 15px 30px 30px;
+  }
+
+  .button-grid .button--white {
+    border-top: 0;
   }
 }
 
