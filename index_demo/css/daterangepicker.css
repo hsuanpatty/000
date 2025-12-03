@@ -798,7 +798,6 @@
 }
    .searchBox-date {
         width: 100%;
-        max-width: 320px;
         margin: 0 auto;
         max-height: 360px;
         overflow-y: auto; /* 手機版上下滑動 */
