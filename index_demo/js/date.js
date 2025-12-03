@@ -1,53 +1,68 @@
 // 讓手機點日期不跳出鍵盤（一定要放最前面）
 $("#date-range, #date-range-sm").attr("readonly", true);
+
 function initDateRange(inputId) {
-    // ... (daterangepicker 初始化程式碼不變) ...
     $(inputId).daterangepicker({
-        // ... (省略 locale, startDate 等設定) ...
+        autoApply: true,
+        locale: {
+            format: "YYYY/MM/DD",
+            separator: " - ",
+            applyLabel: "確定",
+            cancelLabel: "取消",
+            daysOfWeek: ["日", "一", "二", "三", "四", "五", "六"],
+            monthNames: [
+                "1 月","2 月","3 月","4 月","5 月","6 月",
+                "7 月","8 月","9 月","10 月","11 月","12 月"
+            ]
+        }
     });
 
-    // 顯示中文月份
     const pickerInstance = $(inputId).data("daterangepicker");
+    const $container = $(inputId).closest(".input-group");
+
+    // 初始化先隱藏父容器
+    $container.hide();
+    $container.attr("aria-expanded", "false");
 
     function updateMonthTitle(picker) {
-        // 從 picker 實例中取得左右日曆的 Moment 物件
         const leftMonthMoment = picker.leftCalendar.month;
         const rightMonthMoment = picker.rightCalendar.month;
 
-        // **正確使用 Moment.js 方法 (已補齊註釋)**
-        const leftYear = leftMonthMoment.year();
-        const leftMonth = leftMonthMoment.month(); // 0-11
-
-        const rightYear = rightMonthMoment.year();
-        const rightMonth = rightMonthMoment.month(); // 0-11
-
-        // 寫入中文標題 (月份需要 + 1)
         picker.container
             .find(".drp-calendar.left .month")
-            .text(leftYear + " 年 " + (leftMonth + 1) + " 月");
+            .text(leftMonthMoment.year() + " 年 " + (leftMonthMoment.month() + 1) + " 月");
 
         picker.container
             .find(".drp-calendar.right .month")
-            .text(rightYear + " 年 " + (rightMonth + 1) + " 月");
+            .text(rightMonthMoment.year() + " 年 " + (rightMonthMoment.month() + 1) + " 月");
     }
 
-    $(inputId).on(
-        // 確保在日曆顯示時或切換時都能更新標題
-        "show.daterangepicker showCalendar.daterangepicker",
-        function (ev, picker) {
-            // 使用 setTimeout 確保 DOM 已更新
-            setTimeout(() => updateMonthTitle(picker), 10); 
-            
-            // 點擊日期自動關閉邏輯
-            picker.container
-                .find("td.available")
-                .off("click")
-                .on("click", function () {
-                    picker.hide();
-                });
+    $(inputId).on("show.daterangepicker showCalendar.daterangepicker", function (ev, picker) {
+        setTimeout(() => updateMonthTitle(picker), 10);
+
+        // 手風琴邏輯：如果已經打開就收起，沒打開就展開
+        const isExpanded = $container.attr("aria-expanded") === "true";
+
+        // 收起所有（如果你有多個同類容器）
+        $(".input-group").not($container).stop(true,true).slideUp(600).attr("aria-expanded","false");
+
+        if (!isExpanded) {
+            // 展開自己
+            $container.stop(true,true).slideDown(600, "swing").attr("aria-expanded", "true");
+        } else {
+            // 收起自己
+            $container.stop(true,true).slideUp(600, "swing").attr("aria-expanded", "false");
         }
-    );
-    
-    // 第一次載入時也要更新標題
+
+        // 點擊日期 → 收起自己
+        picker.container.find("td.available")
+            .off("click")
+            .on("click", function () {
+                picker.hide();
+                $container.stop(true,true).slideUp(600, "swing").attr("aria-expanded", "false");
+            });
+    });
+
+    // 初始化更新一次月份
     setTimeout(() => updateMonthTitle(pickerInstance), 10);
 }
